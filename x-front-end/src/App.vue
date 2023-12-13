@@ -1,47 +1,37 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import XButton from './components/XButton.vue';
+import XTextField from './components/XTextField.vue';
+import XPost from './components/XPost.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <main class="bg-gray-900 min-h-screen flex items-center justify-center flex-col p-20">
+    <div class="rounded-md border border-gray-700 text-white bg-gray-800 p-6 mx-auto w-full max-w-[600px]">
+      <h1 class="text-2xl mb-4">𝕏 (Twitter) Descentralizado</h1>
+      <p class="text-base mb-4">
+        Esse é um twitter descentralizado, conecte sua sua carteira blockchain e
+        use seus Ethereums para enviar uma mensagem. Cada post enviado você terá
+        chance de ganhar um valor de Ethereum de volta.
+      </p>
+      <XButton text="Conectar carteira" />
+      <XTextField label="Post" name="post" class="mb-2" type="text" id="post" placeholder="John" required />
+      <XButton text="Enviar post" />
+      <div class="flex items-center">
+        <span
+          class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 h-fit">
+          Conectado!
+        </span>
+        <span class="truncate">
+          <!-- {{ currentAccount }} -->
+        </span>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
+    <div
+      class="mt-8 rounded-md border border-gray-700 text-white bg-gray-800 p-6 mx-auto w-full max-w-[600px]"
+    >
+      <h1 class="text-white text-lg mb-4">Todos os posts</h1>
+      <div class="text-center mb-4">Carregando...</div>
+      <XPost address="123" timestamp="10:54" message="Descrição da mensagem" />
+    </div>
   </main>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
