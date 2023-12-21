@@ -3,7 +3,7 @@ import XButton from './components/XButton.vue';
 import XTextField from './components/XTextField.vue';
 import XPost from './components/XPost.vue';
 
-import { ref, onMounted, watchEffect } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const connectedWallet = ref(null);
 const loading = ref(false);
